@@ -19,9 +19,21 @@ public class FindNumber {
     }
 
     /**
-     *
-     * */
+     * 这是最快的方法，从左下角开始，因为每次与target比较后，只有一条，不会跟Find2()一样有两条岔路，
+     * 大于target时，往下走，小于target时，往右走
+     */
     private static boolean Find3(int target, int[][] array) {
+        for (int i = array.length - 1, j = 0; i >= 0 && j < array[0].length; ) {
+            if (array[i][j] == target){
+                return true;
+            }else if (array[i][j] > target){
+                i--;
+                continue;
+            }else {
+                j++;
+                continue;
+            }
+        }
         return false;
     }
 
