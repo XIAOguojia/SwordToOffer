@@ -17,8 +17,7 @@ public class SwapTrim {
     }
 
     private static String replaceSpace(StringBuffer str) {
-        String s = str.toString();
-        s = s.replace(" ","%20");
+        String s = str.toString().replace(" ","%20");
         return s;
     }
 }
