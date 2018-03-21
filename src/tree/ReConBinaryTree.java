@@ -53,10 +53,10 @@ public class ReConBinaryTree {
             }
         }
         //左子树长度
-        int leftlength = i - preStart;
+        int leftlength = i - inStart;
         //右子树长度
         int rightlegth = inEnd - i;
-
+        //把左子树和右子树分别作为新的二叉树，则可以求出其根节点，左子树和右子树。
         if (leftlength > 0) {
             tree.left = reConstructBinaryTree(pre, in, preStart + 1, preStart + leftlength, inStart, i - 1);
         }
