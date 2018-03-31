@@ -21,7 +21,7 @@ public class FindRepeatNumber {
 
         //duplicate1( numbers,length,duplication);
         //duplicate2(numbers,length,duplication);
-        duplicate3(numbers, length, duplication);
+        //duplicate3(numbers, length, duplication);
 
     }
 
@@ -32,7 +32,7 @@ public class FindRepeatNumber {
      * 时间复杂度O(N),不需要额外内存
      */
     private static boolean duplicate3(int[] numbers, int length, int[] duplication) {
-        if (numbers == null) {
+        if (numbers == null || length < 0) {
             return false;
         }
 
