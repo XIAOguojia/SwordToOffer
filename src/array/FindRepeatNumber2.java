@@ -16,42 +16,42 @@ public class FindRepeatNumber2 {
         int[] numbers = {2, 3, 1, 0, 2, 5, 3};
         int length = numbers.length;
 
-        System.out.println(getDuplication(numbers,length));
+        System.out.println(getDuplication(numbers, length));
     }
 
     private static int getDuplication(int[] numbers, int length) {
-        if (numbers == null || length < 0){
+        if (numbers == null || length < 0) {
             return -1;
         }
         int start = 1;
         int end = length - 1;
-        while (end >= start){
-            int middle = ((end - start)>>1) +start;
-            int count = countRange(numbers,length,start,middle);
-            if (end == start){
-                if (count > 1){
+        while (end >= start) {
+            int middle = ((end - start) >> 1) + start;
+            int count = countRange(numbers, length, start, middle);
+            if (end == start) {
+                if (count > 1) {
                     return start;
-                }else {
+                } else {
                     break;
                 }
             }
 
-            if (count > (middle -start+1)){
+            if (count > (middle - start + 1)) {
                 end = middle;
-            }else {
-                start = middle+1;
+            } else {
+                start = middle + 1;
             }
         }
         return -1;
     }
 
     private static int countRange(int[] numbers, int length, int start, int middle) {
-        if (numbers == null){
+        if (numbers == null) {
             return -1;
         }
         int count = 0;
         for (int i = 0; i < length; i++) {
-            if (numbers[i]>=start && numbers[i] <= middle){
+            if (numbers[i] >= start && numbers[i] <= middle) {
                 count++;
             }
         }
