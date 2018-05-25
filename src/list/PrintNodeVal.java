@@ -30,6 +30,7 @@ public class PrintNodeVal {
         ListNode listNode2 = new ListNode(3);
         listNode.next = listNode1;
         listNode1.next = listNode2;
+
         System.out.println(printListFromTailToHead2(listNode).toString());
     }
 
