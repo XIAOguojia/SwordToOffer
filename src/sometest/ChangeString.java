@@ -1,4 +1,4 @@
-package test;
+package sometest;
 
 import java.lang.reflect.Field;
 
