@@ -88,7 +88,7 @@ public class FindRepeatNumber {
     /**
      * 解法一：
      * 先将数组排好序，然后检测当前值与下一个值是否重复
-     * 时间复杂度n(logn),不太好
+     * 时间复杂度(O(nlogn)),不太好
      */
     private static boolean duplicate1(int[] numbers, int length, int[] duplication) {
         if (numbers == null) {
