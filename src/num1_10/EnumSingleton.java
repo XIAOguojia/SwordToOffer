@@ -14,11 +14,11 @@ public enum EnumSingleton {
 
     }
 
-    public static EnumSingleton getInstance(){
+    public static EnumSingleton getInstance() {
         return INSTANCE;
     }
 
-    public void OtherMethod(){
+    public void OtherMethod() {
         //do something
         System.out.println("OtherMethod");
     }

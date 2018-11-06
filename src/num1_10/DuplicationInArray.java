@@ -35,111 +35,103 @@ public class DuplicationInArray {
      * @return true  - 输入有效，并且数组中存在重复的数字
      * false - 输入无效，或者数组中没有重复的数字
      */
-    public boolean duplicate(int[] numbers, int length,DuplicationInArray duplicaton) {
+    public boolean duplicate(int[] numbers, int length, DuplicationInArray duplicaton) {
         if (numbers == null || length <= 0) {
             return false;
         }
         for (int i = 0; i < length; i++) {
-            if (numbers[i] < 0 || numbers[i] > length - 1){
+            if (numbers[i] < 0 || numbers[i] > length - 1) {
                 return false;
             }
         }
         for (int i = 0; i < length; i++) {
-            while (numbers[i] != i){
-                if (numbers[i] == numbers[numbers[i]]){
+            while (numbers[i] != i) {
+                if (numbers[i] == numbers[numbers[i]]) {
                     duplicaton.data = numbers[i];
                     System.out.println(numbers[i]);
                     return true;
                 }
 
                 //swap
-                int temp=numbers[i];
+                int temp = numbers[i];
                 numbers[i] = numbers[temp];
-                numbers[temp] =  temp;
+                numbers[temp] = temp;
             }
         }
         return false;
     }
 
     // ====================测试代码====================
-    public boolean contains(int[] array,int length, int number)
-    {
-        for(int i = 0; i < length; ++i)
-        {
-            if(array[i] == number) {
+    public boolean contains(int[] array, int length, int number) {
+        for (int i = 0; i < length; ++i) {
+            if (array[i] == number) {
                 return true;
             }
         }
         return false;
     }
 
-    public void test(String name,int[] numbers,int lengthNumbers,int[] expected,int expectedExpected,boolean validArgument){
-        System.out.println(name+" begins");
+    public void test(String name, int[] numbers, int lengthNumbers, int[] expected, int expectedExpected, boolean validArgument) {
+        System.out.println(name + " begins");
         DuplicationInArray duplication = new DuplicationInArray();
-        boolean validInput = duplicate(numbers,lengthNumbers,duplication);
-        if (validArgument == validInput){
-            if (validArgument){
-                if (contains(expected,expectedExpected,duplication.data)){
+        boolean validInput = duplicate(numbers, lengthNumbers, duplication);
+        if (validArgument == validInput) {
+            if (validArgument) {
+                if (contains(expected, expectedExpected, duplication.data)) {
                     System.out.println("Passed");
-                }else{
+                } else {
                     System.out.println("FAILED");
                 }
-            }else {
+            } else {
                 System.out.println("Passed");
             }
-        }else {
+        } else {
             System.out.println("FAILED");
         }
     }
 
     // 重复的数字是数组中最小的数字
-    public void test1()
-    {
-        int[] numbers = { 2, 1, 3, 1, 4 };
-        int[] duplications = { 1 };
+    public void test1() {
+        int[] numbers = {2, 1, 3, 1, 4};
+        int[] duplications = {1};
         test("Test1", numbers, numbers.length, duplications, duplications.length, true);
     }
 
     // 重复的数字是数组中最大的数字
-    public void test2()
-    {
-        int[] numbers = { 2, 4, 3, 1, 4 };
-        int[] duplications = { 4 };
+    public void test2() {
+        int[] numbers = {2, 4, 3, 1, 4};
+        int[] duplications = {4};
         test("Test2", numbers, numbers.length, duplications, duplications.length, true);
     }
 
     // 数组中存在多个重复的数字
-    public void test3()
-    {
-        int[] numbers = { 2, 4, 2, 1, 4 };
-        int[] duplications = { 2,4 };
+    public void test3() {
+        int[] numbers = {2, 4, 2, 1, 4};
+        int[] duplications = {2, 4};
         test("Test3", numbers, numbers.length, duplications, duplications.length, true);
     }
 
     // 没有重复的数字
-    public void test4()
-    {
-        int[] numbers = {  2, 1, 3, 0, 4 };
+    public void test4() {
+        int[] numbers = {2, 1, 3, 0, 4};
         // not in use in the test function
-        int[] duplications = { -1 };
+        int[] duplications = {-1};
         test("Test4", numbers, numbers.length, duplications, duplications.length, true);
     }
 
     // 没有重复的数字
-    public void test5()
-    {
-        int[] numbers = {  2, 1, 3, 5, 4 };
+    public void test5() {
+        int[] numbers = {2, 1, 3, 5, 4};
         // not in use in the test function
-        int[] duplications = { -1 };
+        int[] duplications = {-1};
         test("Test5", numbers, numbers.length, duplications, duplications.length, true);
     }
 
     // 无效的输入
-    public void test6()
-    {
+    public void test6() {
         int[] numbers = null;
         // not in use in the test function
-        int[] duplications = { -1 };
+        int[] duplications = {-1};
         test("Test6", numbers, 0, duplications, duplications.length, true);
     }
 }

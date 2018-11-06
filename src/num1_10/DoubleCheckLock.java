@@ -16,13 +16,14 @@ package num1_10;
  */
 public class DoubleCheckLock {
     private static volatile DoubleCheckLock INSTANCE = null;
-    private DoubleCheckLock(){
+
+    private DoubleCheckLock() {
     }
 
-    public static DoubleCheckLock getInstance(){
-        if (INSTANCE == null){
-            synchronized (DoubleCheckLock.class){
-                if (INSTANCE == null){
+    public static DoubleCheckLock getInstance() {
+        if (INSTANCE == null) {
+            synchronized (DoubleCheckLock.class) {
+                if (INSTANCE == null) {
                     INSTANCE = new DoubleCheckLock();
                 }
             }

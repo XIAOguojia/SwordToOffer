@@ -14,13 +14,14 @@ package num1_10;
  */
 public class StaticInnerClass {
 
-    private StaticInnerClass(){}
+    private StaticInnerClass() {
+    }
 
-    public static class InnerClass{
+    public static class InnerClass {
         private static final StaticInnerClass INSTANCE = new StaticInnerClass();
     }
 
-    public static StaticInnerClass getInstance(){
+    public static StaticInnerClass getInstance() {
         return InnerClass.INSTANCE;
     }
 }
